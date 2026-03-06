@@ -1,0 +1,143 @@
+{
+	"name": "adfcdc1",
+	"properties": {
+		"SourceConnectionsInfo": [
+			{
+				"SourceEntities": [
+					{
+						"name": "SalesLT.ProductCategory",
+						"properties": {
+							"schema": [],
+							"dslConnectorProperties": [
+								{
+									"name": "schemaName",
+									"value": "SalesLT"
+								},
+								{
+									"name": "tableName",
+									"value": "ProductCategory"
+								},
+								{
+									"name": "enableCdc",
+									"value": true
+								},
+								{
+									"name": "waterMarkColumn",
+									"value": "ModifiedDate"
+								}
+							]
+						}
+					}
+				],
+				"Connection": {
+					"linkedService": {
+						"referenceName": "AzureSQLDBNewLS",
+						"type": "LinkedServiceReference"
+					},
+					"linkedServiceType": "AzureSqlDatabase",
+					"type": "linkedservicetype",
+					"isInlineDataset": true,
+					"commonDslConnectorProperties": [
+						{
+							"name": "allowSchemaDrift",
+							"value": true
+						},
+						{
+							"name": "inferDriftedColumnTypes",
+							"value": true
+						},
+						{
+							"name": "format",
+							"value": "table"
+						},
+						{
+							"name": "store",
+							"value": "sqlserver"
+						},
+						{
+							"name": "databaseType",
+							"value": "databaseType"
+						},
+						{
+							"name": "database",
+							"value": "database"
+						},
+						{
+							"name": "skipInitialLoad",
+							"value": true
+						}
+					]
+				}
+			}
+		],
+		"TargetConnectionsInfo": [
+			{
+				"TargetEntities": [
+					{
+						"name": "output",
+						"properties": {
+							"schema": [],
+							"dslConnectorProperties": [
+								{
+									"name": "container",
+									"value": "output"
+								},
+								{
+									"name": "fileSystem",
+									"value": "output"
+								}
+							]
+						}
+					}
+				],
+				"Connection": {
+					"linkedService": {
+						"referenceName": "AzureBlobStorageLS",
+						"type": "LinkedServiceReference"
+					},
+					"linkedServiceType": "AzureBlobStorage",
+					"type": "linkedservicetype",
+					"isInlineDataset": true,
+					"commonDslConnectorProperties": [
+						{
+							"name": "allowSchemaDrift",
+							"value": true
+						},
+						{
+							"name": "inferDriftedColumnTypes",
+							"value": true
+						},
+						{
+							"name": "format",
+							"value": "parquet"
+						}
+					]
+				},
+				"DataMapperMappings": [
+					{
+						"targetEntityName": "output",
+						"sourceEntityName": "SalesLT.ProductCategory",
+						"sourceConnectionReference": {
+							"connectionName": "AzureSQLDBNewLS",
+							"type": "linkedservicetype"
+						},
+						"attributeMappingInfo": {
+							"attributeMappings": []
+						}
+					}
+				],
+				"Relationships": []
+			}
+		],
+		"Policy": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 1
+			},
+			"mode": "Microbatch"
+		},
+		"status": "Stopped",
+		"allowVNetOverride": false,
+		"id": "3d8171278d2247bcbdd4b127b031e29c"
+	}
+}

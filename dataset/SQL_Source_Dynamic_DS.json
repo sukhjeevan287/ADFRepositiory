@@ -1,0 +1,13 @@
+{
+	"name": "SQL_Source_Dynamic_DS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSQLDBNewLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

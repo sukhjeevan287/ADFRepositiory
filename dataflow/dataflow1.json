@@ -1,0 +1,70 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "myfile1ds",
+						"type": "DatasetReference"
+					},
+					"name": "myfilecsv"
+				},
+				{
+					"dataset": {
+						"referenceName": "myfile2ds",
+						"type": "DatasetReference"
+					},
+					"name": "myfile2csv"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "Parquet",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "union1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          id as short,",
+				"          name as string,",
+				"          username as string,",
+				"          email as string,",
+				"          phone as string,",
+				"          website as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> myfilecsv",
+				"source(output(",
+				"          id as short,",
+				"          name as string,",
+				"          username as string,",
+				"          email as string,",
+				"          phone as string,",
+				"          website as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> myfile2csv",
+				"myfilecsv, myfile2csv union(byName: true)~> union1",
+				"union1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     format: 'parquet',",
+				"     partitionFileNames:['finalunion.parquet'],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> sink1"
+			]
+		}
+	}
+}

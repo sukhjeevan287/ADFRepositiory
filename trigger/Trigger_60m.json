@@ -1,0 +1,25 @@
+{
+	"name": "Trigger_60m",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "MetadataDrivenCopyTask_60m_TopLevel",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 8,
+				"startTime": "2026-03-05T16:08:00Z",
+				"endTime": "2026-03-06T16:08:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}

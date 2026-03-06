@@ -1,0 +1,20 @@
+{
+	"name": "MetadataDrivenCopyTask_60m_ControlDS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSQLDBNewLS",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "MetadataDrivenCopyTask_60m_20260305"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "SalesLT",
+			"table": "MainControlTable_60m"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

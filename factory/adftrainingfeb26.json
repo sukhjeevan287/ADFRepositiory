@@ -1,0 +1,9 @@
+{
+	"name": "adftrainingfeb26",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "7de03edb-d42b-41da-b6b9-1f552add12be",
+		"tenantId": "5ed523eb-592f-430c-b127-c3e7fc714999"
+	}
+}

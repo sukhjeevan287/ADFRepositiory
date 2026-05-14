@@ -1,0 +1,21 @@
+{
+	"name": "DS_Sink_ProductTable_Parquet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLSStorage_DevStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "product.parquet",
+				"fileSystem": "sink"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

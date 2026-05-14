@@ -1,0 +1,193 @@
+{
+	"name": "DS_Source_NeflixDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLSStorage_DevStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "netflix_cleaned_20251011_141144.csv",
+				"fileSystem": "source"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "session_id",
+				"type": "String"
+			},
+			{
+				"name": "user_id",
+				"type": "String"
+			},
+			{
+				"name": "movie_id",
+				"type": "String"
+			},
+			{
+				"name": "watch_date",
+				"type": "String"
+			},
+			{
+				"name": "device_type",
+				"type": "String"
+			},
+			{
+				"name": "watch_duration_minutes",
+				"type": "String"
+			},
+			{
+				"name": "progress_percentage",
+				"type": "String"
+			},
+			{
+				"name": "action",
+				"type": "String"
+			},
+			{
+				"name": "quality",
+				"type": "String"
+			},
+			{
+				"name": "location_country",
+				"type": "String"
+			},
+			{
+				"name": "is_download",
+				"type": "String"
+			},
+			{
+				"name": "user_rating",
+				"type": "String"
+			},
+			{
+				"name": "email",
+				"type": "String"
+			},
+			{
+				"name": "first_name",
+				"type": "String"
+			},
+			{
+				"name": "last_name",
+				"type": "String"
+			},
+			{
+				"name": "age",
+				"type": "String"
+			},
+			{
+				"name": "gender",
+				"type": "String"
+			},
+			{
+				"name": "country",
+				"type": "String"
+			},
+			{
+				"name": "state_province",
+				"type": "String"
+			},
+			{
+				"name": "city",
+				"type": "String"
+			},
+			{
+				"name": "subscription_plan",
+				"type": "String"
+			},
+			{
+				"name": "subscription_start_date",
+				"type": "String"
+			},
+			{
+				"name": "is_active",
+				"type": "String"
+			},
+			{
+				"name": "monthly_spend",
+				"type": "String"
+			},
+			{
+				"name": "primary_device",
+				"type": "String"
+			},
+			{
+				"name": "household_size",
+				"type": "String"
+			},
+			{
+				"name": "created_at",
+				"type": "String"
+			},
+			{
+				"name": "title",
+				"type": "String"
+			},
+			{
+				"name": "content_type",
+				"type": "String"
+			},
+			{
+				"name": "genre_primary",
+				"type": "String"
+			},
+			{
+				"name": "genre_secondary",
+				"type": "String"
+			},
+			{
+				"name": "release_year",
+				"type": "String"
+			},
+			{
+				"name": "duration_minutes",
+				"type": "String"
+			},
+			{
+				"name": "language",
+				"type": "String"
+			},
+			{
+				"name": "country_of_origin",
+				"type": "String"
+			},
+			{
+				"name": "production_budget",
+				"type": "String"
+			},
+			{
+				"name": "box_office_revenue",
+				"type": "String"
+			},
+			{
+				"name": "number_of_seasons",
+				"type": "String"
+			},
+			{
+				"name": "number_of_episodes",
+				"type": "String"
+			},
+			{
+				"name": "is_netflix_original",
+				"type": "String"
+			},
+			{
+				"name": "added_to_platform",
+				"type": "String"
+			},
+			{
+				"name": "content_warning",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

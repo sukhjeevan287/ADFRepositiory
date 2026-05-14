@@ -1,0 +1,13 @@
+{
+	"name": "DS_Source_SQLAdventurworksGeneric",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_AzureSQLDatabase_Adventureworks",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

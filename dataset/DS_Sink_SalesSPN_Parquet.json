@@ -1,0 +1,21 @@
+{
+	"name": "DS_Sink_SalesSPN_Parquet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLSStorage_DevStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "salesspn.parquet",
+				"fileSystem": "sink"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

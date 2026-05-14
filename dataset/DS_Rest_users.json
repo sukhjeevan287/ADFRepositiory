@@ -1,0 +1,16 @@
+{
+	"name": "DS_Rest_users",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_Rest_jsonplaceholder",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": "users"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

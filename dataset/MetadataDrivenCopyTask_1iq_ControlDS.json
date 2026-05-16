@@ -1,0 +1,19 @@
+{
+	"name": "MetadataDrivenCopyTask_1iq_ControlDS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_AzureSQLDatabase_Adventureworks",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "MetadataDrivenCopyTask_1iq_20260516"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "SalesLT",
+			"table": "MainControlTable_Eve"
+		}
+	}
+}
